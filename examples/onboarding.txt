@@ -1,0 +1,18 @@
+Getting started with wordcount-cli
+----------------------------------
+
+Point the tool at the file you want measured and read the number it prints.
+
+  python wordcount.py examples/release-notes.txt
+
+The count arrives on stdout as a single integer, so it composes cleanly with
+the rest of your shell. Store it in a variable, compare it against a budget,
+or feed it to another program.
+
+  words=$(python wordcount.py draft.md)
+  test "$words" -lt 500 && echo "still inside the brief"
+
+If the path cannot be read you get one line on stderr and exit code 1, so a
+failed run never silently reports zero. If you forget the path you get the
+usage line on stderr and exit code 2. Nothing is written to disk, nothing is
+uploaded, and no configuration is required.

@@ -1,0 +1,24 @@
+wordcount-cli 1.0.0
+------------------
+
+A single-file command line tool that counts the words in one text file.
+
+The release keeps the whole surface deliberately small: one positional
+argument, one integer line on stdout, no configuration file and no network
+access of any kind. A word is any run of non-whitespace characters, so tabs
+and newlines separate words exactly like spaces do.
+
+Counting is done with text.split(), which is what makes the tool fast enough
+to use on every file you touch without thinking about it. An empty file
+counts zero and still exits zero, because "no words" is a result, not an
+error.
+
+Errors stay on stderr and never mix into the piped output. A path that cannot
+be read exits 1 with a single line saying which path failed, while a malformed
+command line exits 2 so a shell script can tell the two apart.
+
+Known limits, stated up front: the whole file is read into memory once, so
+files far larger than available RAM are out of scope; input is assumed to be
+UTF-8 text and a file that is not valid UTF-8 is reported rather than guessed
+at; stdin, directories, multiple files and word-frequency statistics are not
+part of this version.
