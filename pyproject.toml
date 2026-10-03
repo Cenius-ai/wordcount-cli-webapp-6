@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wordcount-cli"
+version = "1.0.0"
+description = "Count the words in one UTF-8 text file from the command line."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = []
+
+[project.scripts]
+# `pip install -e .` puts a `wordcount` command on PATH.
+wordcount = "wordcount:main"
+
+[project.optional-dependencies]
+test = ["pytest==8.3.3"]
+
+[tool.setuptools]
+py-modules = ["wordcount"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
