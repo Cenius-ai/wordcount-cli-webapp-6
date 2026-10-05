@@ -31,7 +31,7 @@ See [`INSTALL.md`](INSTALL.md) for full setup and usage instructions.
 
 ## Architecture
 
-Everything runs out of the box: a Full-stack app codebase (27 files). Kick off `./install.sh` to pull packages and seed the database, then the app is up. Top-level layout: `examples/`, `tests/`. For environment-specific setup, see [`INSTALL.md`](INSTALL.md).
+Everything runs out of the box: a Full-stack app codebase (17 files). Kick off `./install.sh` to pull packages and seed the database, then the app is up. Top-level layout: `examples/`, `tests/`. For environment-specific setup, see [`INSTALL.md`](INSTALL.md).
 
 ## Features
 
